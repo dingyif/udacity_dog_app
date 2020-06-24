@@ -49,12 +49,11 @@ I selected the **VGG19** pertrained framework and changed the last layer of 1000
 
 I randomly selected few photos from website to test the model. Here're some results:
 
-[dog1]: 
-[dog2]: 
-[dog3]: 
-[Human1]: 
-[Human2]: 
-[Human3]: 
+[dog1]: ./images/dog_result_1.png "Sample Output"
+[dog2]: ./images/dog_result_2.png "Sample Output"
+[dog3]: ./images/dog_result_3.png "Sample Output"
+[Human1]: ./images/human_result_1.png "Sample Output"
+[Human2]: ./images/human_result_2.png "Sample Output"
 
 # Suggestions from Udacity:
 
