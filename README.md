@@ -20,6 +20,48 @@ Welcome to the Convolutional Neural Networks (CNN) project in the AI Nanodegree!
 Along with exploring state-of-the-art CNN models for classification and localization, you will make important design decisions about the user experience for your app.  Our goal is that by completing this lab, you understand the challenges involved in piecing together a series of models designed to perform various tasks in a data processing pipeline.  Each model has its strengths and weaknesses, and engineering a real-world application often involves solving many problems without a perfect answer.  Your imperfect solution will nonetheless create a fun user experience!
 
 
+# Brief Summary of what I did:
+
+## - Build Own CNN using Pytorch with the structure below. 
+1. Convolutional Layer <br />
+(conv1) nn.Conv2d(3,16,kernel_size= 3,stride=1,padding=1) <br />
+(relu)  nn.ReLU() <br />
+(pool1) nn.MaxPool2d(2,2) <br />
+(conv2) nn.Conv2d(16,32,kernel_size=3,stride=1,padding=1) <br />
+(relu)  nn.ReLU() <br />
+(pool2) nn.MaxPool2d(2,2) <br />
+(conv3) nn.Conv2d(32,64,kernel_size=3,stride=1,padding=1) <br />
+(pool3) nn.MaxPool2d(2,2) <br />
+2. Fully Connected Layer <br />
+ Flatten the image <br />
+(fc1) nn.Linear(28*28*64,1024) <br />
+(relu)nn.ReLU() <br />
+(dropout) nn.Droupout(0.2) <br />
+(fc2) nn.Linear(1024,133) <br />
+
+### For Loss and Optimizer choices:
+I choose the Loss to be CrossEntropy Loss and SGD with momentum as my Optimizer. The random guess of prediction is **0.75%**, and with only 10 epochs of training my model reached performance of **11%**. I believe with long enough epochs, this will reach a decent accurarcy.
+
+## Transfer Learning
+I selected the **VGG19** pertrained framework and changed the last layer of 1000 into 133 classes, and with just 8 epochs of retrain the classificaiton layer the accuracy of the model reached **85%** on test dataset. It performed extremely well compared to the CNN from scratch.
+
+## Model Evalution:
+
+I randomly selected few photos from website to test the model. Here're some results:
+
+[dog1]: 
+[dog2]: 
+[dog3]: 
+[Human1]: 
+[Human2]: 
+[Human3]: 
+
+# Suggestions from Udacity:
+
+1. 
+
+
+
 ## Project Instructions
 
 ### Instructions
@@ -37,26 +79,3 @@ __NOTE:__ if you are using the Udacity workspace, you *DO NOT* need to re-downlo
 3. Download the [human dataset](http://vis-www.cs.umass.edu/lfw/lfw.tgz).  Unzip the folder and place it in the repo, at location `path/to/dog-project/lfw`.  If you are using a Windows machine, you are encouraged to use [7zip](http://www.7-zip.org/) to extract the folder. 
 4. Make sure you have already installed the necessary Python packages according to the README in the program repository.
 5. Open a terminal window and navigate to the project folder. Open the notebook and follow the instructions.
-	
-	```
-		jupyter notebook dog_app.ipynb
-	```
-
-__NOTE:__ While some code has already been implemented to get you started, you will need to implement additional functionality to successfully answer all of the questions included in the notebook. __Unless requested, do not modify code that has already been included.__
-
-__NOTE:__ In the notebook, you will need to train CNNs in PyTorch.  If your CNN is taking too long to train, feel free to pursue one of the options under the section __Accelerating the Training Process__ below.
-
-## Brief Summary of what I did:
-
-- Build Own CNN using Pytorch with the structure below. 
-1. Convolutional Layer <br />
-(conv1) nn.Conv2d(3,16,kernel_size= 3,stride=1,padding=1) <br />
-(relu)  nn.ReLU() <br />
-(pool1) nn.MaxPool2d(2,2) <br />
-(conv2) nn.Conv2d(16,32,kernel_size=3,stride=1,padding=1) <br />
-(relu)  nn.ReLU() <br />
-(pool2) nn.MaxPool2d(2,2) <br />
-(conv3) nn.Conv2d(32,64,kernel_size=3,stride=1,padding=1) <br />
-(pool3) nn.MaxPool2d(2,2) <br />
-2. Fully Connected Layer 
- 
