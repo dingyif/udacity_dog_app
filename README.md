@@ -49,15 +49,23 @@ I selected the **VGG19** pertrained framework and changed the last layer of 1000
 
 I randomly selected few photos from website to test the model. Here're some results:
 
-![dog1]: (/images/dog_result_1.png)
-![dog2]: (/images/dog_result_2.png) 
-![dog3]: (/images/dog_result_3.png)
-![Human1]: (/images/human_result_1.png)
-![Human2]: (/images/human_result_2.png)
+![dog1](./images/dog_result_1.png)
+![dog2](./images/dog_result_2.png) 
+![dog3](./images/dog_result_3.png)
+![Human1](./images/human_result_1.png)
+![Human2](./images/human_result_2.png)
 
 # Suggestions from Udacity:
 
-1. 
+1. Consider using transforms.Resize(256) and transforms.CenterCrop(224) instead of RandomResizedCrop for train dataset also.
+The reason is RandomResizedCrop crop the image from random (centre, corner etc) so it might miss the face of dogs <br />
+2. CNN from scratch:
+   - Consider using Batch Normalization after each convolution layer (number of conv layer = number of batch normlization layer)
+   - Consider using ELU or LEAKY_RELU activation function
+   - Consider adding weight initialization parameter in conv2d operation
+   - Set Dropout rate between 0.4-0.5
+3. Transfer Learning:
+   - Try experiment with Inception and Xception net which is more power than VGG and Resnet
 
 
 
