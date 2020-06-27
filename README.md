@@ -43,7 +43,7 @@ Along with exploring state-of-the-art CNN models for classification and localiza
 I choose the Loss to be CrossEntropy Loss and SGD with momentum as my Optimizer. The random guess of prediction is **0.75%**, and with only 10 epochs of training my model reached performance of **11%**. I believe with long enough epochs, this will reach a decent accurarcy.
 
 ## Transfer Learning
-I selected the **VGG19** pertrained framework and changed the last layer of 1000 into 133 classes, and with just 8 epochs of retrain the classificaiton layer the accuracy of the model reached **85%** on test dataset. It performed extremely well compared to the CNN from scratch.
+I selected the **VGG16** pertrained framework and changed the last layer of 1000 into 133 classes, and with just 8 epochs of retrain the classificaiton layer the accuracy of the model reached **85%** on test dataset. It performed extremely well compared to the CNN from scratch.
 
 ## Model Evalution:
 
